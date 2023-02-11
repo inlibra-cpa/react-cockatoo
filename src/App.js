@@ -1,25 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
+import "./App.css";
+//Importing components
+import Form from "./components/Form";
+import ToDoList from "./components/ToDoList";
 
 function App() {
+  const [inputText, setInputText] = useState("");
   return (
-    <div style={{ textAlign: 'left' }}>
+    <div className="App" style={{ textAlign: 'center' }}>
       <header>
-        <h1>
-          <code>Todo List</code>
-        </h1>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
+        <h1>Inara's Todo List</h1>
       </header>
+      <Form setInputText={setInputText}/>
+      <ToDoList />
       <ul>
         <li>Action 1</li>
-      <ul>
-        <li>Action 1-1</li>
-        <li>Action 1-2</li>
-        <li>Action 1-3</li>
-      </ul>  
-        <li>Action 2</li>
-        <li>Action 3</li>
       </ul>
     </div>
   );
